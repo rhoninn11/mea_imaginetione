@@ -10,7 +10,6 @@
 </script>
 
 <T.Mesh position.y={pos.y} position.x={pos.x}
-    rotation.x={rotation} rotation.y={rotation}
 
     on:pointerdown={() => {
         held = 1;
@@ -30,9 +29,10 @@
         if (held) {
             console.log("pointermove");
             update_pos();
+            console.log("+++ should be updateing")
         }
     }}
 >
-    <RoundedBoxGeometry args={[0.2, 0.2, 0.2]} />
+    <RoundedBoxGeometry args={[0.8, 0.5, 0.2]} />
     <T.MeshStandardMaterial color="orange" />
 </T.Mesh>

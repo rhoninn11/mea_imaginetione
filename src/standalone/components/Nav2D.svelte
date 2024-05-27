@@ -74,8 +74,8 @@
 		mouse_screan_space.set(mouse_pos);
 	}
 
-	function spaw_at(pointer: Vector3) {
-		nodes.add_new_pos(pointer.x, pointer.y);
+	function spaw_new_node() {
+		nodes.add_new_pos();
 	}
 
 	function world_space_probe(pointer: Vector3) {
@@ -113,7 +113,7 @@
 	<T.Mesh visible={false}
 		position.z={50}
 		scale.z={0.1} scale.x={1000} scale.y={1000}
-		on:dblclick={(e) => spaw_at(e.point)}
+		on:dblclick={(e) => spaw_new_node()}
 		on:pointermove={(e) => world_space_probe(e.point)}
 	>
 		<T.BoxGeometry />

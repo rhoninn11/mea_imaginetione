@@ -14,7 +14,7 @@
 	import { nodes } from "sdlne/stores/nodes";
 	import { mouse_world_space } from "sdlne/stores/NavStore";
 
-	import NodeBox from "sdlne/components/MovableElement.svelte";
+	import MovableElement from "sdlne/components/MovableElement.svelte";
 	import MultipleSplines from "sdlne/components/MultipleSplines.svelte";
 
 	interactivity();
@@ -53,7 +53,7 @@
 </T.Mesh>
 
 {#each $nodes as pos, i}
-	<NodeBox {pos} {rotation} update_pos={() => console.log(`tu powinien nastapic update `, i)}/>
+	<MovableElement {pos} {rotation} update_pos={() => nodes.modify_pos(i)}/>
 {/each}
 
 <T.Mesh scale={0.25} position.y={1.8+pos_on_circle.y} position.z={pos_on_circle.x} position.x={1}>
