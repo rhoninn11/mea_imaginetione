@@ -11,6 +11,9 @@
 	import textture_file from "$lib/assets/icon.png";
 	import Nav2D from "sdlne/tComponents/Nav2D.svelte";
 	import SplineCurve from "sdlne/tComponents/SplineCurve.svelte";
+	import { nodes } from "sdlne/stores/nodes";
+	import { mouse_world_space } from "sdlne/stores/NavStore";
+	import NodeBox from "sdlne/tComponents/MovableElement.svelte";
 
 	interactivity();
 	const obj_scale = spring(1);
@@ -45,6 +48,10 @@
 	<RoundedBoxGeometry args={[0.2, 0.2, 0.2]} />
 	<T.MeshStandardMaterial color="orange" />
 </T.Mesh>
+
+{#each $nodes as pos, i}
+	<NodeBox {pos} {rotation} update_pos={() => console.log(`tu powinien nastapic update `, i)}/>
+{/each}
 
 <T.Mesh scale={0.25} position.y={1.8+pos_on_circle.y} position.z={pos_on_circle.x} position.x={1}>
 	<T.BoxGeometry args={[2, 2, 2]} />
