@@ -6,9 +6,12 @@
 <script lang='ts'>
 	import { Canvas } from '@threlte/core';
 	import type { Size } from '@threlte/core';
-	import Scene from 'sdlne/basic_scene/Scene.svelte'
+	// import Scene from 'sdlne/basic_scene/Scene.svelte'
+	import Scene from 'sdlne/xr_scene/Scene.svelte'
+    import { VRButton } from '@threlte/xr';
 
 	let general_size: Size = {width: 500, height: 500}
+	let is_vr = true
 </script>
 
 
@@ -18,5 +21,9 @@
 	<Canvas size={{width: 500, height: 500 }}>
 		<Scene />
 	</Canvas>
+	{#if is_vr}
+		<VRButton/>
+	{/if}
+
 	
 </div>
