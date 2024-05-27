@@ -11,35 +11,26 @@
     import { VRButton } from '@threlte/xr';
 	import CountButton from 'sdlne/components/CountButton.svelte';
 
-	let general_size: Size = {width: 500, height: 500}
+	const resolution = 512*2;
+	let size: Size = {width: resolution, height: resolution}
 	let is_vr = true
 
 	let count = 0;
 	$: items_repr = Array(count).fill("click");
 
-    function handleClick() {
-        count += 1;
+    function set_count(cnt: number) {
+        count = cnt
     }
 </script>
 
 
 <div class="text-column">
-	<!-- <CountButton/> -->
-	<button on:click={handleClick}>
-		Clicked {count} {count === 1 ? 'time' : 'times'}
-	</button>
-	<Canvas size={{width: 500, height: 500 }}>
+	<CountButton notify={set_count}/>
+	<Canvas {size}>
 		<Scene />
 	</Canvas>
 	{#if is_vr}
 		<VRButton/>
 	{/if}
-	
-	{#each items_repr as item}
-	<p>
-		jakiś prosty tekst {item}
-	</p>
-	{/each}
-
 	
 </div>
