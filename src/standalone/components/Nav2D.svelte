@@ -105,7 +105,7 @@
 <svelte:window on:keydown|preventDefault={onKeyDown} on:keyup={onKeyUp} on:mousemove={onMouseMove} />
 
 <T.Group position.y={vec_post.y} position.x={vec_post.x}>
-	<T.Mesh position.y={2.8} scale={0.1}>
+	<T.Mesh scale={0.1}>
 		<T.BoxGeometry />
 		<T.MeshStandardMaterial color="blue" />
 	</T.Mesh>
@@ -123,7 +123,7 @@
 	<T.OrthographicCamera
 		makeDefault
 		position.z={100}
-		zoom={160+vec_post.z}
+		zoom={80+vec_post.z}
 	>
 		<!-- <OrbitControls target={[0, 0, 0]} enablePan={false} enableZoom={false} /> -->
 	</T.OrthographicCamera>

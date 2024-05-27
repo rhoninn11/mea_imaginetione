@@ -9,11 +9,13 @@
 	} from "@threlte/extras";
 	import { XR } from "@threlte/xr";
 	import textture_file from "$lib/assets/icon.png";
-	import Nav2D from "sdlne/tComponents/Nav2D.svelte";
-	import SplineCurve from "sdlne/tComponents/SplineCurve.svelte";
+	import Nav2D from "sdlne/components/Nav2D.svelte";
+	import SplineCurve from "sdlne/components/SplineCurve.svelte";
 	import { nodes } from "sdlne/stores/nodes";
 	import { mouse_world_space } from "sdlne/stores/NavStore";
-	import NodeBox from "sdlne/tComponents/MovableElement.svelte";
+
+	import NodeBox from "sdlne/components/MovableElement.svelte";
+	import MultipleSplines from "sdlne/components/MultipleSplines.svelte";
 
 	interactivity();
 	const obj_scale = spring(1);
@@ -42,7 +44,8 @@
 <T.DirectionalLight position.y={10} position.z={10} />
 
 <Nav2D></Nav2D>
-<SplineCurve></SplineCurve>
+
+<MultipleSplines/>
 
 <T.Mesh position.y={1.8} rotation.x={rotation} rotation.y={rotation}>
 	<RoundedBoxGeometry args={[0.2, 0.2, 0.2]} />

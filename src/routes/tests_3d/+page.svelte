@@ -6,10 +6,10 @@
 <script lang='ts'>
 	import { Canvas } from '@threlte/core';
 	import type { Size } from '@threlte/core';
-	// import Scene from 'sdlne/basic_scene/Scene.svelte'
-	import Scene from 'sdlne/xr_scene/Scene.svelte'
+	// import BasicScene from 'sdlne/scenes/BasicScene.svelte'
+	import XRScene   from 'sdlne/scenes/XRScene.svelte'
     import { VRButton } from '@threlte/xr';
-	import CountButton from 'sdlne/sComponents/CountButton.svelte';
+	import CountButton from 'sdlne/components/CountButton.svelte';
 
 	const resolution = 512*2;
 	let size: Size = {width: resolution, height: resolution}
@@ -27,7 +27,7 @@
 <div class="text-column">
 	<CountButton notify={set_count}/>
 	<Canvas {size}>
-		<Scene />
+		<XRScene />
 	</Canvas>
 	{#if is_vr}
 		<VRButton/>
