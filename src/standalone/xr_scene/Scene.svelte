@@ -9,6 +9,8 @@
 	} from "@threlte/extras";
 	import { XR } from "@threlte/xr";
 	import textture_file from "$lib/assets/icon.png";
+	import Nav2D from "sdlne/tComponents/Nav2D.svelte";
+	import SplineCurve from "sdlne/tComponents/SplineCurve.svelte";
 
 	interactivity();
 	const obj_scale = spring(1);
@@ -36,9 +38,8 @@
 
 <T.DirectionalLight position.y={10} position.z={10} />
 
-<T.PerspectiveCamera makeDefault position.y={1.8} position.z={5}>
-	<OrbitControls target={[0, 0, 0]} enablePan={false} enableZoom={false} />
-</T.PerspectiveCamera>
+<Nav2D></Nav2D>
+<SplineCurve></SplineCurve>
 
 <T.Mesh position.y={1.8} rotation.x={rotation} rotation.y={rotation}>
 	<RoundedBoxGeometry args={[0.2, 0.2, 0.2]} />

@@ -9,7 +9,7 @@
 	// import Scene from 'sdlne/basic_scene/Scene.svelte'
 	import Scene from 'sdlne/xr_scene/Scene.svelte'
     import { VRButton } from '@threlte/xr';
-	import CountButton from 'sdlne/components/CountButton.svelte';
+	import CountButton from 'sdlne/sComponents/CountButton.svelte';
 
 	const resolution = 512*2;
 	let size: Size = {width: resolution, height: resolution}
