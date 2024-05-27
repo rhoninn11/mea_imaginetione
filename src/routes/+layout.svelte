@@ -4,7 +4,9 @@
 </script>
 
 <div class="app">
-	<Header />
+	<div class="above_wrap">
+		<Header />
+	</div>
 
 	<main>
 		<slot />
@@ -20,6 +22,11 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+	}
+
+	.above_wrap {
+		position: absolute;
+		width: 100%;
 	}
 
 	main {

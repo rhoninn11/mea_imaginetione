@@ -5,6 +5,7 @@
 	import { interactivity } from "@threlte/extras";
 	import { nodes } from 'sdlne/stores/nodes'
 	import { mouse_screan_space, mouse_world_space } from "sdlne/stores/NavStore";
+	import { mouse_move_update, mouse_move_end } from "sdlne/stores/NavStore";
 
 	interactivity();
 
@@ -24,8 +25,8 @@
 	function start_paning_motion() {
 		if (pan) return;
 		pan = 1;
-		pan_start.x = mouse_pos.x;
-		pan_start.y = mouse_pos.y;
+		pan_start.x = $mouse_screan_space.x;
+		pan_start.y = $mouse_screan_space.y;
 	}
 
 	function stop_paning_motion() {
@@ -36,6 +37,7 @@
 
 
 	function onKeyDown(e: KeyboardEvent) {
+		console.log("key pressed", e.key);
 		switch (e.key) {
 			case "q":
 				zoom_out = 1;
@@ -67,24 +69,36 @@
 		}
 	}
 
-	function onMouseMove(e: MouseEvent) {
+	function screanSpaceProbe(e: MouseEvent) {
 		mouse_pos.x = e.clientX;
 		mouse_pos.y = e.clientY;
 
 		mouse_screan_space.set(mouse_pos);
+	}
+	function worldSpaceProbe(pointer: Vector3) {
+		let ver_2d = { x: pointer.x, y: pointer.y };
+		mouse_world_space.set(ver_2d);
+	}
+	function mouseMoveProbe() {
+		if ($mouse_move_update){
+			console.log("+++ cos tu niby się powinno dziać");
+			$mouse_move_update();
+		}
+	}
+	function mouseEndProbe() {
+		if ($mouse_move_end){
+			console.log("+++ a teraz nastąpił koniec");
+			$mouse_move_end();
+		}
 	}
 
 	function spaw_new_node() {
 		nodes.add_new_pos();
 	}
 
-	function world_space_probe(pointer: Vector3) {
-		let ver_2d = { x: pointer.x, y: pointer.y };
-		mouse_world_space.set(ver_2d);
-	}
 
 	
-	useTask((delta) => {
+	useTask((delta: number) => {
 		if (pan) {
 			let delta_rl = (mouse_pos.x - pan_start.x) * 0.01;
 			let delta_ud = (mouse_pos.y - pan_start.y) * 0.01;
@@ -102,7 +116,12 @@
 	});
 </script>
 
-<svelte:window on:keydown|preventDefault={onKeyDown} on:keyup={onKeyUp} on:mousemove={onMouseMove} />
+<svelte:window 
+	on:keydown|preventDefault={onKeyDown} 
+	on:keyup={onKeyUp} 
+	on:mousemove={screanSpaceProbe}
+	on:mousemove={mouseMoveProbe}
+	on:mouseup={mouseEndProbe}/>
 
 <T.Group position.y={vec_post.y} position.x={vec_post.x}>
 	<T.Mesh scale={0.1}>
@@ -114,7 +133,7 @@
 		position.z={50}
 		scale.z={0.1} scale.x={1000} scale.y={1000}
 		on:dblclick={(e) => spaw_new_node()}
-		on:pointermove={(e) => world_space_probe(e.point)}
+		on:pointermove={(e) => worldSpaceProbe(e.point)}
 	>
 		<T.BoxGeometry />
 		<T.MeshStandardMaterial color="blue" />
