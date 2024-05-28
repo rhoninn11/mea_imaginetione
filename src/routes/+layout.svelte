@@ -4,7 +4,8 @@
 </script>
 
 <div class="app">
-	<div class="above_wrap">
+	<!-- <div class="above_wrap"> -->
+	<div class="">
 		<Header />
 	</div>
 
