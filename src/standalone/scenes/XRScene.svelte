@@ -53,7 +53,9 @@
 </T.Mesh>
 
 {#each $nodes as pos, i}
-	<MovableElement {pos} {rotation} update_pos={() => nodes.modify_pos(i)}/>
+	<MovableElement {pos} id={i}
+	 	update_pos={() => nodes.modify_pos(i)}
+	/>
 {/each}
 
 <T.Mesh scale={0.25} position.y={1.8+pos_on_circle.y} position.z={pos_on_circle.x} position.x={1}>

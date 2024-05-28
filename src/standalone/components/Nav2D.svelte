@@ -81,13 +81,13 @@
 	}
 	function mouseMoveProbe() {
 		if ($mouse_move_update){
-			console.log("+++ cos tu niby się powinno dziać");
+			// console.log("+++ cos tu niby się powinno dziać");
 			$mouse_move_update();
 		}
 	}
 	function mouseEndProbe() {
 		if ($mouse_move_end){
-			console.log("+++ a teraz nastąpił koniec");
+			// console.log("+++ a teraz nastąpił koniec");
 			$mouse_move_end();
 		}
 	}
@@ -124,7 +124,7 @@
 	on:mouseup={mouseEndProbe}/>
 
 <T.Group position.y={vec_post.y} position.x={vec_post.x}>
-	<T.Mesh scale={0.1}>
+	<T.Mesh scale={0.1} position.z={20}>
 		<T.BoxGeometry />
 		<T.MeshStandardMaterial color="blue" />
 	</T.Mesh>

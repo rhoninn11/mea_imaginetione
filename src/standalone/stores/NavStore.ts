@@ -1,10 +1,10 @@
 
 import { writable, derived } from 'svelte/store';
+import type { EmptyFunc } from 'sdlne/types';
 
 export const mouse_screan_space = writable({x: 0, y: 0});
 export const mouse_world_space = writable({x: 0, y: 0});
 
-type EmptyFunc = () => void;
 
 export const mouse_move_update = writable<EmptyFunc | undefined>(undefined);
 export const mouse_move_end = writable<EmptyFunc | undefined>(undefined);
