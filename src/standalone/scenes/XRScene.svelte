@@ -16,6 +16,7 @@
 
 	import MovableElement from "sdlne/comp/3d/MovableElement.svelte";
 	import MultipleSplines from "sdlne/comp/3d/MultipleSplines.svelte";
+	import ShadedElement from "sdlne/comp/3d/ShadedElement.svelte";
 
 	interactivity();
 	const obj_scale = spring(1);
@@ -51,6 +52,8 @@
 	<RoundedBoxGeometry args={[0.2, 0.2, 0.2]} />
 	<T.MeshStandardMaterial color="orange" />
 </T.Mesh>
+
+<ShadedElement position={[4, 5, 0]}/>
 
 {#each $nodes as pos, i}
 	<MovableElement {pos} id={i}
