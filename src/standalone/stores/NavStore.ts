@@ -14,4 +14,6 @@ derived(mouse_screan_space, ($mouse_screan_space, set, update) => {
     set({x: x / 2, y: y / 2});
 })
 
+export const zoom_lvl = writable(1);
+export const zoom_rate = writable(5);
 
