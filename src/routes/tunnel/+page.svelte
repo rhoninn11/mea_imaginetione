@@ -7,10 +7,10 @@
 	import { Canvas } from '@threlte/core';
 	import type { Size } from '@threlte/core';
 
-	// import BasicScene from 'sdlne/scenes/BasicScene.svelte'
-	import TunelScene from 'sdlne/scenes/SceneForTunner.svelte'
+	// import BasicScene from '$lib/sdlne/scenes/BasicScene.svelte'
+	import TunelScene from '$lib/sdlne/scenes/SceneForTunner.svelte'
     import { VRButton } from '@threlte/xr';
-	import CountButton from 'sdlne/comp/classic/CountButton.svelte';
+	import CountButton from '$lib/sdlne/comp/classic/CountButton.svelte';
 
 	const resolution = 512*2;
 	let width = resolution

@@ -2,7 +2,7 @@
     import { T } from '@threlte/core'
     import { spring } from 'svelte/motion'
     import { interactivity } from '@threlte/extras'
-    import NeonTunnel from "sdlne/comp/3d/NeonTunnel.svelte"
+    import NeonTunnel from "$lib/sdlne/comp/3d/NeonTunnel.svelte"
 
 
     interactivity()

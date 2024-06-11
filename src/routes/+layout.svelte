@@ -1,16 +1,16 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+	import "../app.css";
 </script>
 
 <div class="app">
-	<!-- <div class="above_wrap"> -->
-	<div class="">
-		<Header />
+	<div>
+		<Header/>
 	</div>
 
 	<main>
-		<slot />
+		<slot></slot>
 	</main>
 
 	<!-- <footer>
@@ -18,16 +18,13 @@
 	</footer> -->
 </div>
 
+
+
 <style>
 	.app {
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-	}
-
-	.above_wrap {
-		position: absolute;
-		width: 100%;
 	}
 
 	main {

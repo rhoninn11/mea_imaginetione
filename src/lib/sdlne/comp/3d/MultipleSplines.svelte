@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SplineCurve from "sdlne/comp/3d/SplineCurve.svelte";
+    import SplineCurve from "$lib/sdlne/comp/3d/SplineCurve.svelte";
 </script>
 
 <SplineCurve offset={3} girth={1.25} color={"#dc959f"}></SplineCurve>

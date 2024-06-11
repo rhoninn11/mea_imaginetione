@@ -9,14 +9,14 @@
 	} from "@threlte/extras";
 	import { XR } from "@threlte/xr";
 	import textture_file from "$lib/assets/icon.png";
-	import Nav2D from "sdlne/comp/3d/Nav2D.svelte";
-	import SplineCurve from "sdlne/comp/3d/SplineCurve.svelte";
-	import { nodes } from "sdlne/stores/nodes";
-	import { mouse_world_space } from "sdlne/stores/NavStore";
+	import Nav2D from "$lib/sdlne/comp/3d/Nav2D.svelte";
+	import SplineCurve from "$lib/sdlne/comp/3d/SplineCurve.svelte";
+	import { nodes } from "$lib/sdlne/stores/nodes";
+	import { mouse_world_space } from "$lib/sdlne/stores/NavStore";
 
-	import MovableElement from "sdlne/comp/3d/MovableElement.svelte";
-	import MultipleSplines from "sdlne/comp/3d/MultipleSplines.svelte";
-	import ShadedElement from "sdlne/comp/3d/ShadedElement.svelte";
+	import MovableElement from "$lib/sdlne/comp/3d/MovableElement.svelte";
+	import MultipleSplines from "$lib/sdlne/comp/3d/MultipleSplines.svelte";
+	import ShadedElement from "$lib/sdlne/comp/3d/ShadedElement.svelte";
 
 	interactivity();
 	const obj_scale = spring(1);

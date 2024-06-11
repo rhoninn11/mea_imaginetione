@@ -1,9 +1,9 @@
 <script lang="ts">
     import { T } from "@threlte/core";
     import { RoundedBoxGeometry, interactivity, Text } from "@threlte/extras";
-    import { mouse_move_update, mouse_move_end } from "sdlne/stores/NavStore";
-    import { unselectHandler } from "sdlne/stores/editStore";
-    import ConnectionHandle from "sdlne/comp/3d/ConnectionHandle.svelte";
+    import { mouse_move_update, mouse_move_end } from "$lib/sdlne/stores/NavStore";
+    import { unselectHandler } from "$lib/sdlne/stores/editStore";
+    import ConnectionHandle from "$lib/sdlne/comp/3d/ConnectionHandle.svelte";
 
     export let pos = { x: 0, y: 0 };
     export let update_pos = () => console.log("local value");

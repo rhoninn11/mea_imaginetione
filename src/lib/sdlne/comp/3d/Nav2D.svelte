@@ -3,10 +3,10 @@
 	import { useTask } from "@threlte/core";
 	import { BoxGeometry, Mesh, Vector3 } from "three";
 	import { interactivity } from "@threlte/extras";
-	import { nodes } from 'sdlne/stores/nodes'
-	import { mouse_screan_space, mouse_world_space } from "sdlne/stores/NavStore";
-	import { mouse_move_update, mouse_move_end } from "sdlne/stores/NavStore";
-	import { zoom_lvl, zoom_rate } from "sdlne/stores/NavStore";
+	import { nodes } from '$lib/sdlne/stores/nodes'
+	import { mouse_screan_space, mouse_world_space } from "$lib/sdlne/stores/NavStore";
+	import { mouse_move_update, mouse_move_end } from "$lib/sdlne/stores/NavStore";
+	import { zoom_lvl, zoom_rate } from "$lib/sdlne/stores/NavStore";
 
 	interactivity();
 

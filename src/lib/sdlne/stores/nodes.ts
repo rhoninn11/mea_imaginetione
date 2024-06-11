@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-import { mouse_world_space} from 'sdlne/stores/NavStore'
+import { mouse_world_space} from '$lib/sdlne/stores/NavStore'
 
 type NodePos = {
     x: number;
