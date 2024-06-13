@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+import topographyPlugin from "@tailwindcss/typography";
+import openVariant from "./tailwind.plugin";
+
 export default {
   mode: "jit",
   darkMode: "class",
@@ -9,5 +12,5 @@ export default {
     extend: {}
   },
 
-  plugins: [require("@tailwindcss/typography")]
+  plugins: [topographyPlugin, openVariant]
 } as Config;
