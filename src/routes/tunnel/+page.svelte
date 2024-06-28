@@ -10,7 +10,7 @@
 	// import BasicScene from '$lib/sdlne/scenes/BasicScene.svelte'
 	import TunelScene from '$lib/sdlne/scenes/SceneForTunner.svelte'
     import { VRButton } from '@threlte/xr';
-	import CountButton from '$lib/sdlne/comp/classic/CountButton.svelte';
+	import CountButton from '$lib/sdlne/comp/classics/CountButton.svelte';
 
 	const resolution = 512*2;
 	let width = resolution
