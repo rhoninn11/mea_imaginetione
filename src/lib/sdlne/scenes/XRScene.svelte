@@ -17,6 +17,7 @@
 	import MovableElement from "$lib/sdlne/comp/3d/MovableElement.svelte";
 	import MultipleSplines from "$lib/sdlne/comp/3d/MultipleSplines.svelte";
 	import ShadedElement from "$lib/sdlne/comp/3d/ShadedElement.svelte";
+	import NeonTunnel from "$lib/sdlne/comp/3d/NeonTunnel.svelte";
 
 	interactivity();
 	const obj_scale = spring(1);
@@ -74,3 +75,5 @@
 	<T.CylinderGeometry args={[3, 0.01]} />
 	<T.MeshStandardMaterial color="turquoise" />
 </T.Mesh>
+
+<NeonTunnel/>
