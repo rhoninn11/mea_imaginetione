@@ -2,16 +2,21 @@
 	import Header from './Header.svelte';
 	import './styles.css';
 	import "../app.css";
+	import { ModeWatcher } from 'mode-watcher';
+
+	import CusomNavbar from '$lib/sdlne/comp/classics/CusomNavbar.svelte';
 </script>
 
-<div class="app">
+<div class="flex flex-col min-h-[100vh] bg-background">
 	<div>
-		<Header/>
+		<!-- <Header/> -->
+		<CusomNavbar/>
 	</div>
 
-	<main>
+	<main class="text-foreground">
 		<slot></slot>
 	</main>
+	<ModeWatcher/>
 
 	<!-- <footer>
 		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
@@ -21,11 +26,6 @@
 
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
 
 	main {
 		flex: 1;
@@ -38,21 +38,4 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>
