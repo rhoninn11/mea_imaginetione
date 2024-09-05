@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { T, useTask } from "@threlte/core";
 	import { spring } from "svelte/motion";
 	import { interactivity } from "@threlte/extras";
@@ -7,7 +7,7 @@
 		RoundedBoxGeometry,
 		OrbitControls,
 	} from "@threlte/extras";
-	import { XR } from "@threlte/xr";
+	import { XR, Hand, Controller, type XRHandEvent, type XRControllerEvent } from '@threlte/xr'
 	import textture_file from "$lib/assets/icon.png";
 	import Nav2D from "$lib/sdlne/comp/3d/Nav2D.svelte";
 	import SplineCurve from "$lib/sdlne/comp/3d/SplineCurve.svelte";
@@ -18,6 +18,12 @@
 	import MultipleSplines from "$lib/sdlne/comp/3d/MultipleSplines.svelte";
 	import ShadedElement from "$lib/sdlne/comp/3d/ShadedElement.svelte";
 	import NeonTunnel from "$lib/sdlne/comp/3d/NeonTunnel.svelte";
+	import XrControls from "$lib/sdlne/comp/xr/XrControls.svelte";
+
+
+    const handleEvent = (event: XRHandEvent, name: string) => {
+        console.log(name, 'Hand', event)
+    }
 
 	interactivity();
 	const obj_scale = spring(1);
@@ -41,7 +47,7 @@
 
 <XR />
 
-<T.AmbientLight />
+<XrControls/>
 
 <T.DirectionalLight position.y={10} position.z={10} />
 
