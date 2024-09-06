@@ -10,6 +10,7 @@
 		{label: "sverdle", href: "/sverdle"},
 		{label: "nodes", href: "/nodes"},
 		{label: "tunnel", href: "/tunnel"},
+		{label: "flow", href: "/flow"}
 	]
 	
 	let mobile_menu = false;

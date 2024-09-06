@@ -16,7 +16,7 @@
 </script>
 
 
-<a class={`text-xl border-foreground relative flex text-foreground p-2 pt-3 h-full hover:bg-accent hover:text-foreground
+<a class={`text-l border-foreground relative flex text-foreground px-5 pt-2 pb-1 h-full hover:bg-accent hover:text-foreground
 	ease-in-out group ${link_active_tw(href, active_page)} transition-colors`} {href}>
 	<span>{label}</span>
 	<div class="group-hover:block hidden absolute top-full left-0 text whitespace-nowrap p-2 border">
