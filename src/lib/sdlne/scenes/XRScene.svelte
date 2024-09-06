@@ -8,7 +8,7 @@
 		OrbitControls,
 	} from "@threlte/extras";
 	import { XR, Hand, Controller, type XRHandEvent, type XRControllerEvent } from '@threlte/xr'
-	import textture_file from "$lib/assets/icon.png";
+	import textture_file from "$lib/assets/img/icon.png";
 	import Nav2D from "$lib/sdlne/comp/3d/Nav2D.svelte";
 	import SplineCurve from "$lib/sdlne/comp/3d/SplineCurve.svelte";
 	import { nodes } from "$lib/sdlne/stores/nodes";
@@ -65,7 +65,7 @@
 {#each $nodes as pos, i}
 	<MovableElement {pos} id={i}
 	 	update_pos={() => nodes.modify_pos(i)}
-	/>
+/>
 {/each}
 
 <T.Mesh scale={0.25} position.y={1.8+pos_on_circle.y} position.z={pos_on_circle.x} position.x={1}>

@@ -1,6 +1,6 @@
 
 <script lang="ts">
-	import { page } from '$app/stores';
+	import MenuOption from './MenuOption.svelte';
 
 	// in future it can be done automativally checking routes in src/routes
     const options = [
@@ -19,26 +19,14 @@
 		mobile_menu = !mobile_menu;
 	}
 	
-	const tw_selected = "bg-foreground text-background"
-	function link_active_tw(url: string, active_url: string) {
-		let this_page_url = active_url
-		return url === this_page_url ? tw_selected : ""
-	}
-
-	$: active_page = $page.url.pathname
-
 </script>
 
 <nav class="sticky top-0 bg-background flex items-center w-full">
 	<div class="md:flex hidden">
 	{#each options as item}
-		<a class={`text-xl relative flex text-foreground p-2 h-full hover:bg-accent hover:text-foreground
-			ease-in-out group ${link_active_tw(item.href, active_page)} transition-colors`} href={item.href}>
-			<span>{item.label}</span>
-			<div class="group-hover:block hidden absolute top-full right-0 text whitespace-nowrap p-2 border">
-				<span>suboption</span>
-			</div>
-		</a>
+		<MenuOption href={item.href} label={item.label}>
+			<span>suboption</span>
+		</MenuOption>
 	{/each}
 	</div>
 	<div class="md:hidden text-foreground text-xl p-2 ml-auto flex items-center">

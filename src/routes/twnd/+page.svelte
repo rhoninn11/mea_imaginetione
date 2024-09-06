@@ -11,6 +11,6 @@
 <CustomNavbar></CustomNavbar>
 
 <p>
-	Could i bind somehow content of sveltekit routes through a store to navbar for to automativaly update its content?
+	That page is made tailwind training:D
 </p>
 

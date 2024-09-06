@@ -4,7 +4,7 @@
     import { interactivity } from '@threlte/extras'
     import { useTexture } from '@threlte/extras'
 
-    import textture_file from '$lib/assets/icon.png';
+    import textture_file from '$lib/assets/img/icon.png';
 
 
     interactivity()
